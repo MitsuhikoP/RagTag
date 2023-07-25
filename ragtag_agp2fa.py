@@ -66,9 +66,9 @@ def main():
             sys.stdout.write("N"*agp_line.gap_len)
         else:
             if agp_line.orientation == "-":
-                sys.stdout.write(reverse_complement(fai.fetch(agp_line.comp, agp_line.comp_beg-1, agp_line.comp_end)))
+                sys.stdout.write(reverse_complement(fai.fetch(agp_line.comp, agp_line.comp_beg-1, agp_line.comp_end).decode('utf8')))
             else:
-                sys.stdout.write(fai.fetch(agp_line.comp, agp_line.comp_beg-1, agp_line.comp_end))
+                sys.stdout.write(fai.fetch(agp_line.comp, agp_line.comp_beg-1, agp_line.comp_end).decode('utf8'))
 
     # End the FASTA file with a newline
     sys.stdout.write("\n")
